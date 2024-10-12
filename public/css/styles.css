@@ -1,0 +1,44 @@
+body {
+    background-color: #FAE7EB;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #B58EBC;
+    font-family: 'Lucida Handwriting', sans-serif, sans-serif;
+    text-align:center;
+}
+
+p {
+    color: #B58EBC;
+    text-align:center;
+}
+
+.text-area {
+    border: 5px solid white ;
+    border-radius: 2rem;
+    padding: 3rem
+}
+
+.button-area {
+    padding-top: 2rem;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #B58EBC;
+    color: white;
+    border: 2px solid white;
+    border-radius: 1rem;
+    cursor: pointer;
+    display: flex;
+    margin: auto;
+    display: block;
+}
+
+button:hover {
+    background-color: #FAE7EB;
+    color: #B58EBC;
+    border: 2px solid #B58EBC
+}
