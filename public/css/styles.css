@@ -103,15 +103,29 @@ button:hover {
 .clothes-imgs {
     grid-area: 1 / 2 / 2 / 3;
     padding: 1rem;
-    
 }
 
-.tops {
-    grid-area: 1 / 1 / 2 / 2;
+.tops, .bottoms, .full-length, .jackets, .shoes, .hats, .hair {
+    cursor: pointer;
+
     background-color: #B58EBC;
     width: 40px;
     height: 40px;
     border-radius: 0.25rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tops:hover, .bottoms:hover, .full-length:hover, .jackets:hover, .shoes:hover, .hats:hover, .hair:hover {
+    background-color: #FAE7EB;
+    color: #B58EBC;
+    /* border: 2px solid #B58EBC */
+}
+
+.tops {
+    grid-area: 1 / 1 / 2 / 2;
 }
 
 .bottoms {
