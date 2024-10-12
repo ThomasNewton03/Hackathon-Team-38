@@ -1,3 +1,9 @@
+const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+
+const currentDay = 2;
+
+document.getElementById("day-title").textContent = days[currentDay];
+
 // Define an array of items
 const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
 

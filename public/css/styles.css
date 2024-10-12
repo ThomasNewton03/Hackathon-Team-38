@@ -37,6 +37,11 @@ p {
 
 .model {
     grid-area: 1 / 1 / 2 / 2;
+
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
@@ -62,7 +67,7 @@ button:hover {
     grid-row-gap: 0px;
     border: 5px solid white;
     border-radius: 2rem;
-    margin: 3rem;
+    margin: 0.25rem 3rem 3rem 3rem;
     padding: 1rem;
 }
 
@@ -155,4 +160,9 @@ button:hover {
 .category-icons {
     height: 30px;
     width: 30px;
+}
+
+.jemima {
+    width:122x;
+    height:373px;
 }
