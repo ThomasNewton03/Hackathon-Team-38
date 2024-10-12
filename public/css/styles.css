@@ -89,7 +89,7 @@ button:hover {
     border-radius: 2rem;
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:  0.25fr 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
@@ -108,9 +108,21 @@ button:hover {
 .clothes-imgs {
     grid-area: 1 / 2 / 2 / 3;
     padding: 1rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5;
 }
 
-.tops, .bottoms, .full-length, .jackets, .shoes, .hats, .hair {
+.tops,
+.bottoms,
+.full-length,
+.jackets,
+.shoes,
+.hats,
+.hair {
     cursor: pointer;
 
     background-color: #B58EBC;
@@ -123,7 +135,13 @@ button:hover {
     align-items: center;
 }
 
-.tops:hover, .bottoms:hover, .full-length:hover, .jackets:hover, .shoes:hover, .hats:hover, .hair:hover {
+.tops:hover,
+.bottoms:hover,
+.full-length:hover,
+.jackets:hover,
+.shoes:hover,
+.hats:hover,
+.hair:hover {
     background-color: #FAE7EB;
     color: #B58EBC;
     /* border: 2px solid #B58EBC */
@@ -163,6 +181,35 @@ button:hover {
 }
 
 .jemima {
-    width:122x;
-    height:373px;
+    width: 122x;
+    height: 373px;
+}
+
+.clothing-item {
+    width: 100px;
+    height: 100px;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.div2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.div3 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.div4 {
+    grid-area: 2 / 2 / 3 / 3;
 }
