@@ -19,3 +19,8 @@ for (let i = 0; i < items.length; i++) {
     // Append the <li> to the <ul>
     itemsList.appendChild(li);
 }
+
+document.getElementById('go-to-school-button').addEventListener('click', function() {
+    window.location.href = 'school.html';
+    console.log("Gone to school")
+});
