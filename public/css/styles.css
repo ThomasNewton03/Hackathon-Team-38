@@ -89,7 +89,7 @@ button:hover {
     border-radius: 2rem;
 
     display: grid;
-    grid-template-columns:  0.25fr 1fr;
+    grid-template-columns:  0.1fr 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
@@ -99,7 +99,7 @@ button:hover {
     grid-area: 1 / 1 / 2 / 2;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 1rem;
     padding: 1.5rem
@@ -113,7 +113,8 @@ button:hover {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 0.5rem;
-    grid-row-gap: 0.5;
+    grid-row-gap: 0.5rem;
+    padding: 1rem
 }
 
 .tops,
@@ -171,10 +172,6 @@ button:hover {
     grid-area: 6 / 1 / 7 / 2;
 }
 
-.hair {
-    grid-area: 7 / 1 / 8 / 2;
-}
-
 .category-icons {
     height: 30px;
     width: 30px;
@@ -186,16 +183,15 @@ button:hover {
 }
 
 .clothing-item {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #B58EBC;
+    border-radius: 1rem;
+    cursor: pointer;
 }
 
-.parent {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+.clothing-item:hover {
+    border: 2px solid white;
 }
 
 .div1 {
