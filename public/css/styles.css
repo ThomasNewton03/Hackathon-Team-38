@@ -91,22 +91,27 @@ button:hover {
 }
 
 .clothes-categories {
-    grid-area: 1 / 1 / NaN / NaN;
+    grid-area: 1 / 1 / 2 / 2;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(7, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 1rem;
-    padding: 1rem
+    padding: 1.5rem
 }
 
 .clothes-imgs {
     grid-area: 1 / 2 / 2 / 3;
-    padding: 1rem
+    padding: 1rem;
+    
 }
 
 .tops {
     grid-area: 1 / 1 / 2 / 2;
+    background-color: #B58EBC;
+    width: 40px;
+    height: 40px;
+    border-radius: 0.25rem;
 }
 
 .bottoms {
@@ -131,4 +136,9 @@ button:hover {
 
 .hair {
     grid-area: 7 / 1 / 8 / 2;
+}
+
+.category-icons {
+    height: 30px;
+    width: 30px;
 }
