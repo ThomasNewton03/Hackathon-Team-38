@@ -102,7 +102,7 @@ button:hover {
 .category-list {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 1rem;
     padding: 1.5rem
@@ -117,9 +117,7 @@ button:hover {
 .bottoms,
 .full-length,
 .jackets,
-.shoes,
-.hats,
-.hair {
+.shoes {
     cursor: pointer;
 
     background-color: #B58EBC;
@@ -135,9 +133,7 @@ button:hover {
 .bottoms:hover,
 .full-length:hover,
 .jackets:hover,
-.shoes:hover,
-.hats:hover,
-.hair:hover {
+.shoes:hover {
     background-color: #FAE7EB;
     color: #B58EBC;
     /* border: 2px solid #B58EBC */
@@ -161,10 +157,6 @@ button:hover {
 
 .shoes {
     grid-area: 5 / 1 / 6 / 2;
-}
-
-.hats {
-    grid-area: 6 / 1 / 7 / 2;
 }
 
 .category-icons {
