@@ -4,9 +4,9 @@ const currentDay = 0;
 
 document.getElementById("day-title").textContent = days[currentDay];
 
-tops = ['../imgs/tops/white-shirt.png', '../imgs/tops/black-shirt.png', '../imgs/tops/blue-shirt.png', '../imgs/tops/north-face-hoodie.png'];
-bottoms = ['../imgs/skirts/blue-skirt.png', '../imgs/skirts/brown-skirt.png', '../imgs/skirts/green-skirt.png', '../imgs/skirts/red-tartan-skirt.png'];
-fullLength = [];
+tops = ['../imgs/tops/white-shirt.png', '../imgs/tops/black-shirt.png', '../imgs/tops/blue-shirt.png', '../imgs/tops/north-face.png'];
+bottoms = ['../imgs/trousers/baggy-dress-trousers.png', '../imgs/trousers/skinny-jeans.png', '../imgs/trousers/baggy-jeans.png', '../imgs/trousers/trackpants.png'];
+fullLength = ['../imgs/skirts/blue-skirt.png', '../imgs/skirts/grey-skirt.png', '../imgs/skirts/green-skirt.png', '../imgs/skirts/red-tartan-skirt.png'];
 jackets = [];
 shoes = [];
 hats = [];
@@ -28,7 +28,7 @@ function renderClothes() {
 
         console.log(i)
         const image = document.createElement('img');
-        image.src = clothesList[i];
+        image.src = clothesList[i].split(".png")[0] + "-icon.png";
         image.className = "clothing-item";
         imgDiv.appendChild(image);
     }
@@ -69,4 +69,34 @@ document.getElementsByClassName('hats')[0].addEventListener('click', function ()
     renderClothes()
     console.log(clothesList)
 });
+
+const divs = document.querySelectorAll('div[class^="div"]');
+
+divs.forEach(div => {
+    div.addEventListener('click', function() {
+        const index = parseInt(div.className.replace('div', '')) - 1; // Get the index (subtract 1 for 0-based index)
+        console.log('You clicked on:', index);
+        displayItem(index);
+
+    });
+});
+
+function displayItem(index) {
+    imgDiv = document.getElementsByClassName('model')[0];
+    console.log(imgDiv.childElementCount);
+
+    if (imgDiv.childElementCount > 1) {
+        console.log(imgDiv.children)
+        console.log(imgDiv.removeChild(imgDiv.children[1]))
+        console.log(imgDiv.children)
+    }
+
+    const image = document.createElement('img');
+    image.src = clothesList[index];
+    image.className = "worn-clothes";
+    imgDiv.appendChild(image);
+
+    console.log(imgDiv.childElementCount);
+
+}
 
