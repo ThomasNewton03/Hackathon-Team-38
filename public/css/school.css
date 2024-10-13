@@ -1,0 +1,66 @@
+body {
+    background-image: url("../imgs/backgrounds/school-background.jpg");
+    background-size: 100%;
+}
+
+p {
+    color: #B58EBC;
+    text-align: left;
+    padding: 10px;
+    background-color: #ECF8F7;
+    width: 450px;
+    font-size: 30px;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    border-radius: 25px;
+}
+
+.button-area {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    z-index: 10;
+}
+
+button {
+    padding: 20px 40px;
+    background-color: #B58EBC;
+    font-size: 30px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FAE7EB;
+    color: #B58EBC;
+    border: 2px solid #B58EBC
+}
+
+.cool-meter {
+    height: 322px;
+    width: 110px;
+
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.model {
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    position: relative
+}
+
+.worn-clothes {
+    position: absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    max-width: 100%;
+}
