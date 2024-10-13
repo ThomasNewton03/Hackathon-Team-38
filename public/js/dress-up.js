@@ -11,6 +11,8 @@ jackets = [];
 shoes = [];
 hats = [];
 
+indices = [-1, -1, -1, -1, -1, -1]
+current_item = 0
 
 var clothesList = tops;
 
@@ -26,7 +28,6 @@ function renderClothes() {
             imgDiv.removeChild(imgDiv.firstChild);
         }
 
-        console.log(i)
         const image = document.createElement('img');
         image.src = clothesList[i].split(".png")[0] + "-icon.png";
         image.className = "clothing-item";
@@ -36,36 +37,42 @@ function renderClothes() {
 
 document.getElementsByClassName('tops')[0].addEventListener('click', function () {
     clothesList = tops;
+    current_item = 0
     renderClothes();
     console.log(clothesList)
 });
 
 document.getElementsByClassName('bottoms')[0].addEventListener('click', function () {
     clothesList = bottoms;
+    current_item = 1
     renderClothes()
     console.log(clothesList)
 });
 
 document.getElementsByClassName('full-length')[0].addEventListener('click', function () {
     clothesList = fullLength;
+    current_item = 2
     renderClothes()
     console.log(clothesList)
 });
 
 document.getElementsByClassName('jackets')[0].addEventListener('click', function () {
     clothesList = jackets;
+    current_item = 3
     renderClothes()
     console.log(clothesList)
 });
 
 document.getElementsByClassName('shoes')[0].addEventListener('click', function () {
     clothesList = shoes;
+    current_item = 4
     renderClothes()
     console.log(clothesList)
 });
 
 document.getElementsByClassName('hats')[0].addEventListener('click', function () {
     clothesList = hats;
+    current_item = 5
     renderClothes()
     console.log(clothesList)
 });
@@ -83,11 +90,14 @@ divs.forEach(div => {
 
 function displayItem(index) {
     imgDiv = document.getElementsByClassName('model')[0];
-    console.log(imgDiv.childElementCount);
 
-    if (imgDiv.childElementCount > 1) {
+    if (imgDiv.childElementCount > 1 && indices[current_item] != -1) {
         console.log(imgDiv.children)
-        console.log(imgDiv.removeChild(imgDiv.children[1]))
+        imgDiv.removeChild(imgDiv.children[indices[current_item]])
+
+        for (i = 0; i < indices.length; i++) {
+            indices[i] -= 1;
+        }
         console.log(imgDiv.children)
     }
 
@@ -96,7 +106,7 @@ function displayItem(index) {
     image.className = "worn-clothes";
     imgDiv.appendChild(image);
 
-    console.log(imgDiv.childElementCount);
+    indices[current_item] = imgDiv.childElementCount - 1
 
 }
 
