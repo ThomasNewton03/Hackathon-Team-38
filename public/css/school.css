@@ -46,3 +46,12 @@ button:hover {
     right: 20px;
     bottom: 20px;
 }
+
+.model {
+    height: 232px; 
+    width: 76px;
+    
+
+    position: absolute;
+    left: 20px;
+}
