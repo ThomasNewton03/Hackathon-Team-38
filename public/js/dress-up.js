@@ -1,6 +1,14 @@
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
-const currentDay = 4;
+var currentDay = -1;
+
+if (!sessionStorage.getItem("currentDay")) {
+    currentDay = 0;
+} else {
+    currentDay = parseInt(JSON.parse(sessionStorage.getItem("currentDay")))
+}
+
+console.log(currentDay)
 
 document.getElementById("day-title").textContent = days[currentDay];
 
@@ -127,3 +135,9 @@ function displayItem(index) {
 
 }
 
+document.getElementById('go-to-school-button').addEventListener('click', function() {
+    sessionStorage.setItem('currentDay', JSON.stringify(currentDay + 1));
+    sessionStorage.setItem('clothesList', JSON.stringify(items_wearing));
+    window.location.href = 'school.html';
+    console.log("Gone to school")
+});

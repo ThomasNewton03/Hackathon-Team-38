@@ -1,20 +1,62 @@
+document.getElementById('button4').addEventListener('click', function () {
+    window.location.href = 'dress-up.html';
+    console.log("Gone to school")
+});
+
+document.getElementById('button7').addEventListener('click', function () {
+    window.location.href = 'dress-up.html';
+    console.log("Gone to school")
+});
+
+document.getElementById('button10').addEventListener('click', function () {
+    window.location.href = 'dress-up.html';
+    console.log("Gone to school")
+});
+
+document.getElementById('button13').addEventListener('click', function () {
+    window.location.href = 'dress-up.html';
+    console.log("Gone to school")
+});
+
+document.getElementById('button16').addEventListener('click', function () {
+    window.location.href = 'end-page.html';
+    console.log("Gone to school")
+});
+
 function displayClothes() {
-    const clothesList = sessionStorage.getItem('clothesList');
+    const clothesList = JSON.parse(sessionStorage.getItem('clothesList'));
+    console.log('clothesss')
     console.log(clothesList);
-    const container = document.getElementById("clothes-container");
-
+    const container = document.getElementsByClassName("model")[0];
     container.innerHTML = "";
+    const jem = document.createElement("img");
+    jem.src = "../imgs/jemima/Jemima.png";
+    jem.className = "jemima";
+    container.appendChild(jem);
 
-    clothesList.forEach((clothing) => {
-        const img = document.createElement("img");
-        img.src = clothing;
-        img.className = "worn-clothes";
-        container.appendChild(img);
-    });
+    
+
+    for (var clothing of clothesList) {
+        if (clothing != "") {
+            const img = document.createElement("img");
+            img.src = clothing;
+            img.className = "worn-clothes";
+            container.appendChild(img);
+        }
+    }
 }
 
 function showNext(currentButtonId, nextButtonId, contentId) {
+    console.log("passed in");
+    console.log(currentButtonId);
+    console.log(nextButtonId);
+    console.log(contentId);
+
     document.getElementById(currentButtonId).style.display = 'none';
+
+    if (currentPage != 0) {
+        document.getElementById('button1').style.display = 'none' 
+    }
 
     if (nextButtonId) {
         document.getElementById(nextButtonId).style.display = 'inline-block';
@@ -26,9 +68,6 @@ function showNext(currentButtonId, nextButtonId, contentId) {
                 <p>
                     Welcome to your first day in your new school! Glad to see you’ve got your best outfit on. By the end of the week your goal is to have a full cool meter! I’m sure everything will be absolutely fine...
                 </p>
-            </div>
-            <div class="model">
-                <img class="jemima" src="imgs/jemima/Jemima.png" />
             </div>
             <img class="cool-meter" src="imgs/cool-meter/cool-meter-3.png" />
         `,
@@ -146,6 +185,8 @@ function showNext(currentButtonId, nextButtonId, contentId) {
         `
     };
 
+    displayClothes();
+
     // <div class="model">
     //     <img class="jemima" src="imgs/jemima/Jemima.png" />
     // </div>
@@ -156,4 +197,15 @@ function showNext(currentButtonId, nextButtonId, contentId) {
     }
 }
 
-displayClothes();
+var currentPage = parseInt(JSON.parse(sessionStorage.getItem('currentDay')))-1;
+console.log(`current day: ${currentPage}`)
+var buttonNum = -1;
+added_nums = [1, 0, -1, -2]
+
+if (currentPage != 0) {
+    buttonNum = (currentPage * 4) + added_nums[currentPage-1];
+    var prevButton = `button${buttonNum-1}`;
+    var nextButton = `button${buttonNum}`;
+    var id = `day${currentPage+1}.1`;
+    showNext(prevButton, nextButton, id);
+}
