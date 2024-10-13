@@ -7,12 +7,13 @@ document.getElementById("day-title").textContent = days[currentDay];
 tops = ['../imgs/tops/white-shirt.png', '../imgs/tops/black-shirt.png', '../imgs/tops/blue-shirt.png', '../imgs/tops/north-face.png'];
 bottoms = ['../imgs/trousers/baggy-dress-trousers.png', '../imgs/trousers/skinny-jeans.png', '../imgs/trousers/baggy-jeans.png', '../imgs/trousers/trackpants.png'];
 fullLength = ['../imgs/skirts/blue-skirt.png', '../imgs/skirts/grey-skirt.png', '../imgs/skirts/green-skirt.png', '../imgs/skirts/red-tartan-skirt.png'];
-jackets = [];
+jackets = ['../imgs/jackets/north-face-jacket.png', '../imgs/jackets/leather-jacket.png', '../imgs/jackets/jean-jacket.png', '../imgs/jackets/burberry-trench-coat.png'];;
 shoes = [];
 hats = [];
 
 indices = [-1, -1, -1, -1, -1, -1]
 current_item = 0
+items_wearing = ['', '', '', '', '', '']
 
 var clothesList = tops;
 
@@ -84,7 +85,7 @@ divs.forEach(div => {
         const index = parseInt(div.className.replace('div', '')) - 1; // Get the index (subtract 1 for 0-based index)
         console.log('You clicked on:', index);
         displayItem(index);
-
+        items_wearing[current_item] = clothesList[index]
     });
 });
 
@@ -93,10 +94,15 @@ function displayItem(index) {
 
     if (imgDiv.childElementCount > 1 && indices[current_item] != -1) {
         console.log(imgDiv.children)
+        console.log(indices[current_item])
+        console.log(indices)
         imgDiv.removeChild(imgDiv.children[indices[current_item]])
 
-        for (i = 0; i < indices.length; i++) {
-            indices[i] -= 1;
+        for (i = current_item; i < indices.length; i++) {
+            if (indices[i] != -1) {
+                indices[i] -= 1;
+            }
+            
         }
         console.log(imgDiv.children)
     }
