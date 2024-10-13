@@ -20,6 +20,7 @@ p {
     position: absolute;
     left: 20px;
     bottom: 20px;
+    z-index: 10;
 }
 
 button {
@@ -48,10 +49,18 @@ button:hover {
 }
 
 .model {
-    height: 232px; 
-    width: 76px;
-    
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    position: relative
+}
 
+.worn-clothes {
     position: absolute;
-    left: 20px;
+    top:0;
+    left: 0;
+    width:100%;
+    max-width: 100%;
 }

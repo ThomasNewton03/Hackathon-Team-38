@@ -10,23 +10,23 @@
 
 
     <div class="button-area">
-        <button id="button1" onclick="showNext('button1', 'button2', 'day1.1')">Next</button>
+        <button id="button1" onclick="showNext('button1', 'button2', 'day1.1'); displayClothes()">Next</button>
         <button id="button2" onclick="showNext('button2', 'button3', 'day1.2')" style="display:none;">Next</button>
         <button id="button3" onclick="showNext('button3', 'button4', 'day1.3')" style="display:none;">Next</button>
 
-        <button id="button4" onclick="showNext('button4', 'button5', 'day2.1')" style="display:none;">Next</button>
+        <button id="button4" onclick="showNext('button4', 'button5', 'day2.1'); displayClothes()" style="display:none">Next</button>
         <button id="button5" onclick="showNext('button5', 'button6', 'day2.2')" style="display:none;">Next</button>
         <button id="button6" onclick="showNext('button6', 'button7', 'day2.3')" style="display:none;">Next</button>
 
-        <button id="button7" onclick="showNext('button7', 'button8', 'day3.1')" style="display:none;">Next</button>
+        <button id="button7" onclick="showNext('button7', 'button8', 'day3.1'); displayClothes()" style="display:none;">Next</button>
         <button id="button8" onclick="showNext('button8', 'button9', 'day3.2')" style="display:none;">Next</button>
         <button id="button9" onclick="showNext('button9', 'button10', 'day3.3')" style="display:none;">Next</button>
 
-        <button id="button10" onclick="showNext('button10', 'button11', 'day4.1')" style="display:none;">Next</button>
+        <button id="button10" onclick="showNext('button10', 'button11', 'day4.1'); displayClothes()" style="display:none;">Next</button>
         <button id="button11" onclick="showNext('button11', 'button12', 'day4.2')" style="display:none;">Next</button>
         <button id="button12" onclick="showNext('button12', 'button13', 'day4.3')" style="display:none;">Next</button>
 
-        <button id="button13" onclick="showNext('button13', 'button14', 'day5.1')" style="display:none;">Next</button>
+        <button id="button13" onclick="showNext('button13', 'button14', 'day5.1'); displayClothes()" style="display:none;">Next</button>
         <button id="button14" onclick="showNext('button14', 'button15', 'day5.2')" style="display:none;">Next</button>
         <button id="button15" onclick="showNext('button15', '', 'day5.3')" style="display:none;">Next</button>  
     </div>
@@ -35,12 +35,6 @@
     <div id="content">
         <p>Click through the prompts to go through your day at school!</p>
     </div>
-
-    <script>
-        // Example sessionStorage usage
-        const savedData = sessionStorage.getItem('yourKey');
-        console.log(savedData); // Check if sessionStorage is working (if needed)
-    </script>
 
 </body>
 <script src="js/school.js"></script>

@@ -1,3 +1,18 @@
+function displayClothes() {
+    const clothesList = sessionStorage.getItem('clothesList');
+    console.log(clothesList);
+    const container = document.getElementById("clothes-container");
+
+    container.innerHTML = "";
+
+    clothesList.forEach((clothing) => {
+        const img = document.createElement("img");
+        img.src = clothing;
+        img.className = "worn-clothes";
+        container.appendChild(img);
+    });
+}
+
 function showNext(currentButtonId, nextButtonId, contentId) {
     document.getElementById(currentButtonId).style.display = 'none';
 
@@ -11,6 +26,9 @@ function showNext(currentButtonId, nextButtonId, contentId) {
                 <p>
                     Welcome to your first day in your new school! Glad to see you’ve got your best outfit on. By the end of the week your goal is to have a full cool meter! I’m sure everything will be absolutely fine...
                 </p>
+            </div>
+            <div class="model">
+                <img class="jemima" src="imgs/jemima/Jemima.png" />
             </div>
             <img class="cool-meter" src="imgs/cool-meter/cool-meter-3.png" />
         `,
@@ -137,3 +155,5 @@ function showNext(currentButtonId, nextButtonId, contentId) {
         document.getElementById('content').innerHTML = contentMap[contentId];
     }
 }
+
+displayClothes();
